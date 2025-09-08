@@ -1,0 +1,2665 @@
+{
+  "summary": {
+    "total_tests": 110,
+    "successful_tests": 110,
+    "failed_tests": 0,
+    "success_rate": 100.0,
+    "total_execution_time": 0.05273175239562988,
+    "average_execution_time": 0.0004758162931962447,
+    "results_by_recipe": {
+      "Chocolate Chip Cookies": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "baking",
+        "complexity": "simple"
+      },
+      "Beef Stir Fry": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "cooking",
+        "complexity": "medium"
+      },
+      "Caesar Salad": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "cooking",
+        "complexity": "medium"
+      },
+      "Banana Bread": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "baking",
+        "complexity": "simple"
+      },
+      "Chicken Curry": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "cooking",
+        "complexity": "medium"
+      },
+      "Pancakes": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "baking",
+        "complexity": "simple"
+      },
+      "Quinoa Buddha Bowl": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "cooking",
+        "complexity": "medium"
+      },
+      "Chocolate Cake": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "baking",
+        "complexity": "medium"
+      },
+      "Pasta Carbonara": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "cooking",
+        "complexity": "medium"
+      },
+      "Smoothie Bowl": {
+        "total_tests": 11,
+        "successful_tests": 11,
+        "failed_tests": 0,
+        "success_rate": 100.0,
+        "category": "dessert",
+        "complexity": "simple"
+      }
+    },
+    "results_by_diet": {
+      "vegan": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "gluten-free": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "dairy-free": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "keto": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "paleo": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "vegan, gluten-free": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "dairy-free, nut-free": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "keto, dairy-free": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "paleo, soy-free": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "vegan, gluten-free, nut-free": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "dairy-free, gluten-free, soy-free": {
+        "total_tests": 10,
+        "successful_tests": 10,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      }
+    },
+    "results_by_complexity": {
+      "simple": {
+        "total_tests": 44,
+        "successful_tests": 44,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      },
+      "medium": {
+        "total_tests": 66,
+        "successful_tests": 66,
+        "failed_tests": 0,
+        "success_rate": 100.0
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 2,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006039142608642578,
+      "substitutions": [
+        {
+          "original_ingredient": "butter",
+          "original_amount": "1 cup",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "1.00 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002548694610595703,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00022983551025390625,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002307891845703125,
+      "substitutions": [
+        {
+          "original_ingredient": "sugar",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "erythritol",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup sugar = 1 cup erythritol",
+          "notes": "Natural sweetener, no aftertaste. Use granulated form.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00021505355834960938,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 3,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004470348358154297,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "butter",
+          "original_amount": "1 cup",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "1.00 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004138946533203125,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004189014434814453,
+      "substitutions": [
+        {
+          "original_ingredient": "sugar",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "erythritol",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup sugar = 1 cup erythritol",
+          "notes": "Natural sweetener, no aftertaste. Use granulated form.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005009174346923828,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 3,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.000659942626953125,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "butter",
+          "original_amount": "1 cup",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "1.00 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Chip Cookies",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006210803985595703,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002989768981933594,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002918243408203125,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00028896331787109375,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004291534423828125,
+      "substitutions": [
+        {
+          "original_ingredient": "rice",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "cauliflower rice",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup rice = 1 cup cauliflower rice",
+          "notes": "Low carb, high fiber. Saut\u00e9 to remove moisture.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002880096435546875,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005588531494140625,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005590915679931641,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006053447723388672,
+      "substitutions": [
+        {
+          "original_ingredient": "rice",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "cauliflower rice",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup rice = 1 cup cauliflower rice",
+          "notes": "Low carb, high fiber. Saut\u00e9 to remove moisture.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.000659942626953125,
+      "substitutions": [
+        {
+          "original_ingredient": "soy sauce",
+          "original_amount": "3 tbsp",
+          "substituted_ingredient": "coconut aminos",
+          "substituted_amount": "3.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Made from coconut sap. Similar umami flavor.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0008368492126464844,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Beef Stir Fry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0008151531219482422,
+      "substitutions": [
+        {
+          "original_ingredient": "soy sauce",
+          "original_amount": "3 tbsp",
+          "substituted_ingredient": "coconut aminos",
+          "substituted_amount": "3.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Made from coconut sap. Similar umami flavor.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004470348358154297,
+      "substitutions": [
+        {
+          "original_ingredient": "egg yolk",
+          "original_amount": "1 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "1.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003559589385986328,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004990100860595703,
+      "substitutions": [
+        {
+          "original_ingredient": "parmesan cheese",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "nutritional yeast",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1/4 cup cheese = 2-3 Tbsp nutritional yeast",
+          "notes": "Cheesy flavor, high in B vitamins. Good for sprinkling.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003669261932373047,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003619194030761719,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0007259845733642578,
+      "substitutions": [
+        {
+          "original_ingredient": "egg yolk",
+          "original_amount": "1 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "1.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0007190704345703125,
+      "substitutions": [
+        {
+          "original_ingredient": "parmesan cheese",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "nutritional yeast",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1/4 cup cheese = 2-3 Tbsp nutritional yeast",
+          "notes": "Cheesy flavor, high in B vitamins. Good for sprinkling.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0007460117340087891,
+      "substitutions": [
+        {
+          "original_ingredient": "parmesan cheese",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "nutritional yeast",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1/4 cup cheese = 2-3 Tbsp nutritional yeast",
+          "notes": "Cheesy flavor, high in B vitamins. Good for sprinkling.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006959438323974609,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0010249614715576172,
+      "substitutions": [
+        {
+          "original_ingredient": "egg yolk",
+          "original_amount": "1 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "1.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Caesar Salad",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0010297298431396484,
+      "substitutions": [
+        {
+          "original_ingredient": "parmesan cheese",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "nutritional yeast",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1/4 cup cheese = 2-3 Tbsp nutritional yeast",
+          "notes": "Cheesy flavor, high in B vitamins. Good for sprinkling.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 2,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002238750457763672,
+      "substitutions": [
+        {
+          "original_ingredient": "butter",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00020885467529296875,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00019931793212890625,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00028705596923828125,
+      "substitutions": [
+        {
+          "original_ingredient": "sugar",
+          "original_amount": "3/4 cup",
+          "substituted_ingredient": "erythritol",
+          "substituted_amount": "0.75 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup sugar = 1 cup erythritol",
+          "notes": "Natural sweetener, no aftertaste. Use granulated form.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002090930938720703,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 3,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00045680999755859375,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "butter",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00041294097900390625,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00043892860412597656,
+      "substitutions": [
+        {
+          "original_ingredient": "sugar",
+          "original_amount": "3/4 cup",
+          "substituted_ingredient": "erythritol",
+          "substituted_amount": "0.75 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup sugar = 1 cup erythritol",
+          "notes": "Natural sweetener, no aftertaste. Use granulated form.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003910064697265625,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 3,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005829334259033203,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "butter",
+          "original_amount": "1/2 cup",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "0.50 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Banana Bread",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005700588226318359,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00032782554626464844,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00032401084899902344,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00032210350036621094,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.000324249267578125,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00032019615173339844,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006272792816162109,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006301403045654297,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006339550018310547,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006279945373535156,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0009341239929199219,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chicken Curry",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0009679794311523438,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 2,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0001628398895263672,
+      "substitutions": [
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "1 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "1.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "butter",
+          "original_amount": "3 tbsp",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "3.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00015282630920410156,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "1 1/2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "1.00 0.5 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00014519691467285156,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00014972686767578125,
+      "substitutions": [
+        {
+          "original_ingredient": "sugar",
+          "original_amount": "2 tbsp",
+          "substituted_ingredient": "erythritol",
+          "substituted_amount": "2.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup sugar = 1 cup erythritol",
+          "notes": "Natural sweetener, no aftertaste. Use granulated form.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00021910667419433594,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 3,
+      "unchanged_ingredients": 5,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00030303001403808594,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "1 1/2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "1.00 0.5 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "1 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "1.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "butter",
+          "original_amount": "3 tbsp",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "3.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002739429473876953,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002791881561279297,
+      "substitutions": [
+        {
+          "original_ingredient": "sugar",
+          "original_amount": "2 tbsp",
+          "substituted_ingredient": "erythritol",
+          "substituted_amount": "2.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup sugar = 1 cup erythritol",
+          "notes": "Natural sweetener, no aftertaste. Use granulated form.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00027298927307128906,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 3,
+      "unchanged_ingredients": 5,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004169940948486328,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "1 1/2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "1.00 0.5 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "1 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "1.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "butter",
+          "original_amount": "3 tbsp",
+          "substituted_ingredient": "coconut oil",
+          "substituted_amount": "3.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Solid at room temperature. Good for baking.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pancakes",
+      "recipe_category": "baking",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004088878631591797,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "1 1/2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "1.00 0.5 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004138946533203125,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00040912628173828125,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.000408172607421875,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00040793418884277344,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0004088878631591797,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0008022785186767578,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0008080005645751953,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0008320808410644531,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0008001327514648438,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.001199960708618164,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Quinoa Buddha Bowl",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0012121200561523438,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00044798851013183594,
+      "substitutions": [
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003039836883544922,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 10,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002799034118652344,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00030994415283203125,
+      "substitutions": [
+        {
+          "original_ingredient": "sugar",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "erythritol",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup sugar = 1 cup erythritol",
+          "notes": "Natural sweetener, no aftertaste. Use granulated form.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 10,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002741813659667969,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 2,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005471706390380859,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 10,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005640983581542969,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005710124969482422,
+      "substitutions": [
+        {
+          "original_ingredient": "sugar",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "erythritol",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup sugar = 1 cup erythritol",
+          "notes": "Natural sweetener, no aftertaste. Use granulated form.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 10,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0005142688751220703,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 2,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0007801055908203125,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        },
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "2 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "2.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Chocolate Cake",
+      "recipe_category": "baking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 9,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0007710456848144531,
+      "substitutions": [
+        {
+          "original_ingredient": "AP flour",
+          "original_amount": "2 cups",
+          "substituted_ingredient": "almond flour",
+          "substituted_amount": "2.00 cups",
+          "conversion_applied": false,
+          "substitution_ratio": "1 cup wheat flour = 1 cup almond flour",
+          "notes": "High protein, low carb. May need more liquid in recipes.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00015807151794433594,
+      "substitutions": [
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "4 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "4.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0001499652862548828,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00019788742065429688,
+      "substitutions": [
+        {
+          "original_ingredient": "parmesan cheese",
+          "original_amount": "1 cup",
+          "substituted_ingredient": "nutritional yeast",
+          "substituted_amount": "1.00 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1/4 cup cheese = 2-3 Tbsp nutritional yeast",
+          "notes": "Cheesy flavor, high in B vitamins. Good for sprinkling.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0001468658447265625,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00014495849609375,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002868175506591797,
+      "substitutions": [
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "4 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "4.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003199577331542969,
+      "substitutions": [
+        {
+          "original_ingredient": "parmesan cheese",
+          "original_amount": "1 cup",
+          "substituted_ingredient": "nutritional yeast",
+          "substituted_amount": "1.00 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1/4 cup cheese = 2-3 Tbsp nutritional yeast",
+          "notes": "Cheesy flavor, high in B vitamins. Good for sprinkling.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003361701965332031,
+      "substitutions": [
+        {
+          "original_ingredient": "parmesan cheese",
+          "original_amount": "1 cup",
+          "substituted_ingredient": "nutritional yeast",
+          "substituted_amount": "1.00 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1/4 cup cheese = 2-3 Tbsp nutritional yeast",
+          "notes": "Cheesy flavor, high in B vitamins. Good for sprinkling.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0002880096435546875,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00042319297790527344,
+      "substitutions": [
+        {
+          "original_ingredient": "eggs",
+          "original_amount": "4 large",
+          "substituted_ingredient": "flax egg",
+          "substituted_amount": "4.00 large",
+          "conversion_applied": false,
+          "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+          "notes": "Mix and let sit 5 minutes. Good for binding.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Pasta Carbonara",
+      "recipe_category": "cooking",
+      "recipe_complexity": "medium",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 6,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00041985511779785156,
+      "substitutions": [
+        {
+          "original_ingredient": "parmesan cheese",
+          "original_amount": "1 cup",
+          "substituted_ingredient": "nutritional yeast",
+          "substituted_amount": "1.00 cup",
+          "conversion_applied": false,
+          "substitution_ratio": "1/4 cup cheese = 2-3 Tbsp nutritional yeast",
+          "notes": "Cheesy flavor, high in B vitamins. Good for sprinkling.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003368854522705078,
+      "substitutions": [
+        {
+          "original_ingredient": "honey",
+          "original_amount": "1 tbsp",
+          "substituted_ingredient": "maple syrup",
+          "substituted_amount": "1.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Plant-based sweetener. Similar viscosity to honey.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003228187561035156,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.00032401084899902344,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "keto"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003211498260498047,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "paleo"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0003199577331542969,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan",
+        "gluten-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0008132457733154297,
+      "substitutions": [
+        {
+          "original_ingredient": "honey",
+          "original_amount": "1 tbsp",
+          "substituted_ingredient": "maple syrup",
+          "substituted_amount": "1.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Plant-based sweetener. Similar viscosity to honey.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0007100105285644531,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "keto",
+        "dairy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006730556488037109,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "paleo",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0006968975067138672,
+      "substitutions": []
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      "success": true,
+      "substitutions_made": 1,
+      "unchanged_ingredients": 7,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0009450912475585938,
+      "substitutions": [
+        {
+          "original_ingredient": "honey",
+          "original_amount": "1 tbsp",
+          "substituted_ingredient": "maple syrup",
+          "substituted_amount": "1.00 tbsp",
+          "conversion_applied": false,
+          "substitution_ratio": "1:1 substitution",
+          "notes": "Plant-based sweetener. Similar viscosity to honey.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "recipe_name": "Smoothie Bowl",
+      "recipe_category": "dessert",
+      "recipe_complexity": "simple",
+      "diets": [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ],
+      "success": true,
+      "substitutions_made": 0,
+      "unchanged_ingredients": 8,
+      "warnings": [],
+      "error_message": "",
+      "execution_time": 0.0009322166442871094,
+      "substitutions": []
+    }
+  ],
+  "test_metadata": {
+    "timestamp": "2025-09-08T11:24:58.834098",
+    "total_recipes": 10,
+    "total_diet_combinations": 11,
+    "simple_diets": [
+      [
+        "vegan"
+      ],
+      [
+        "gluten-free"
+      ],
+      [
+        "dairy-free"
+      ],
+      [
+        "keto"
+      ],
+      [
+        "paleo"
+      ]
+    ],
+    "complex_diets": [
+      [
+        "vegan",
+        "gluten-free"
+      ],
+      [
+        "dairy-free",
+        "nut-free"
+      ],
+      [
+        "keto",
+        "dairy-free"
+      ],
+      [
+        "paleo",
+        "soy-free"
+      ],
+      [
+        "vegan",
+        "gluten-free",
+        "nut-free"
+      ],
+      [
+        "dairy-free",
+        "gluten-free",
+        "soy-free"
+      ]
+    ]
+  }
+}
