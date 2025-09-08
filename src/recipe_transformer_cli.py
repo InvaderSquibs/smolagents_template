@@ -346,6 +346,84 @@ def create_sample_recipe() -> RecipeInput:
     )
 
 
+def generate_recipe_text(output: RecipeOutput) -> str:
+    """Generate a clean, readable recipe text from the transformed output."""
+    lines = []
+    
+    # Recipe title
+    lines.append(output.transformed_name)
+    lines.append("")
+    
+    # Diet restrictions note
+    if output.diet_restrictions:
+        lines.append(f"Dietary Restrictions: {', '.join(output.diet_restrictions)}")
+        lines.append("")
+    
+    # Servings
+    if output.servings:
+        lines.append(f"Serves {output.servings}")
+        lines.append("")
+    
+    # Substitutions made (if any)
+    if output.substitutions:
+        lines.append("Substitutions Made:")
+        for i, sub in enumerate(output.substitutions, 1):
+            lines.append(f"  {i}. {sub['original_ingredient']} → {sub['substituted_ingredient']}")
+            if sub['notes']:
+                lines.append(f"     Note: {sub['notes']}")
+        lines.append("")
+    
+    # Ingredients
+    lines.append("Ingredients:")
+    for ing in output.transformed_ingredients:
+        # Clean up the amount display
+        amount_display = ing['amount']
+        name = ing['name']
+        
+        if amount_display and not amount_display.startswith('1 item'):
+            # Clean up the amount display to show proper format
+            if amount_display.endswith(f" {name}"):
+                # Remove duplicate ingredient name
+                clean_amount = amount_display.replace(f" {name}", "")
+                lines.append(f"• {clean_amount} {name}")
+            else:
+                lines.append(f"• {amount_display} {name}")
+        else:
+            # Fallback for when unit parsing fails
+            quantity = ing.get('quantity', 1.0)
+            unit = ing.get('unit', '')
+            if unit and unit != 'item':
+                # Format decimal quantities nicely
+                if quantity == int(quantity):
+                    lines.append(f"• {int(quantity)} {unit} {name}")
+                else:
+                    lines.append(f"• {quantity} {unit} {name}")
+            else:
+                lines.append(f"• {quantity} {name}")
+    
+    lines.append("")
+    
+    # Instructions
+    if output.instructions:
+        lines.append("Instructions:")
+        # Clean up instructions (remove recipe name if it appears at the start)
+        instructions = output.instructions
+        if instructions.startswith(output.original_name):
+            instructions = instructions[len(output.original_name):].strip()
+        
+        lines.append(instructions)
+        lines.append("")
+    
+    # Warnings (if any)
+    if output.warnings:
+        lines.append("⚠️  Warnings:")
+        for warning in output.warnings:
+            lines.append(f"  • {warning}")
+        lines.append("")
+    
+    return '\n'.join(lines)
+
+
 def print_recipe_output(output: RecipeOutput, verbose: bool = False):
     """Print recipe transformation results in a readable format."""
     print(f"\n🍪 {output.transformed_name}")
@@ -489,16 +567,19 @@ def main():
         
         # Save output if requested
         if args.recipe:
-            # Create output filename based on input
+            # Create output filename - always save as .txt for readability
             if args.recipe.lower().endswith('.json'):
-                output_file = args.recipe.replace('.json', '_transformed.json')
+                base_name = args.recipe.replace('.json', '')
             else:
-                # For .txt files, create a .json output file
                 base_name = args.recipe.rsplit('.', 1)[0] if '.' in args.recipe else args.recipe
-                output_file = f"{base_name}_transformed.json"
             
-            with open(output_file, 'w') as f:
-                json.dump(asdict(output), f, indent=2)
+            output_file = f"{base_name}_transformed.txt"
+            
+            # Generate readable recipe text
+            recipe_text = generate_recipe_text(output)
+            
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write(recipe_text)
             print(f"\n💾 Transformed recipe saved to: {output_file}")
     
     except Exception as e:
