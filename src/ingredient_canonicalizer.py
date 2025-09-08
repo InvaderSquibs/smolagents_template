@@ -36,7 +36,7 @@ class IngredientCanonicalizer:
         # Flour aliases
         self._add_alias_group(
             canonical="flour",
-            aliases=["ap flour", "white flour", "plain flour", "all-purpose flour", "flour"],
+            aliases=["ap flour", "white flour", "plain flour", "all-purpose flour", "wheat flour"],
             description="Standard baking flour"
         )
         
