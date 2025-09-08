@@ -37,6 +37,8 @@ class RestrictionKnowledgeBase:
     def __init__(self):
         self.restrictions: Dict[str, IngredientRestrictions] = {}
         self.diet_types: set = set()
+        # Load the knowledge base data
+        self.load_from_table("Restriction Table")
         
     def load_from_table(self, table_path: str) -> None:
         """Load restriction data from the markdown table format."""
@@ -597,6 +599,38 @@ class RestrictionKnowledgeBase:
         
         # Add dairy-free restrictions
         dairy_free_restrictions = {
+            "milk": IngredientRestrictions(
+                original_ingredient="milk",
+                diet_type="dairy-free",
+                substitution_options=[
+                    SubstitutionOption(
+                        name="oat milk",
+                        ratio="1:1 substitution",
+                        unit_conversion="1 cup ≈ 240ml",
+                        notes="Creamy texture, neutral flavor. Good for baking and cooking."
+                    ),
+                    SubstitutionOption(
+                        name="almond milk",
+                        ratio="1:1 substitution",
+                        unit_conversion="1 cup ≈ 240ml",
+                        notes="Light texture, slightly nutty flavor. Good for smoothies."
+                    ),
+                    SubstitutionOption(
+                        name="coconut milk",
+                        ratio="1:1 substitution",
+                        unit_conversion="1 cup ≈ 240ml",
+                        notes="Rich and creamy. Good for curries and desserts."
+                    ),
+                    SubstitutionOption(
+                        name="soy milk",
+                        ratio="1:1 substitution",
+                        unit_conversion="1 cup ≈ 240ml",
+                        notes="High protein content, neutral flavor. Good for cooking."
+                    )
+                ],
+                forbidden_tags=["dairy", "lactose"]
+            ),
+            
             "cheese": IngredientRestrictions(
                 original_ingredient="cheese",
                 diet_type="dairy-free",
@@ -898,7 +932,7 @@ class RestrictionKnowledgeBase:
         
         # Add vegan egg restrictions
         vegan_egg_restrictions = {
-            "eggs_vegan": IngredientRestrictions(
+            "eggs": IngredientRestrictions(
                 original_ingredient="eggs",
                 diet_type="vegan",
                 substitution_options=[
