@@ -320,8 +320,8 @@ class RestrictionKnowledgeBase:
         
         # Add gluten-free restrictions
         gluten_free_restrictions = {
-            "wheat flour": IngredientRestrictions(
-                original_ingredient="wheat flour",
+            "flour": IngredientRestrictions(
+                original_ingredient="flour",
                 diet_type="gluten-free",
                 substitution_options=[
                     SubstitutionOption(
