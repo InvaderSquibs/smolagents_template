@@ -201,62 +201,240 @@ def create_sample_recipe() -> RecipeInput:
     )
 
 
+def format_recipe_dict_as_cookbook(recipe_dict: Dict[str, Any], dietary_restrictions: List[str]) -> str:
+    """Format a recipe dictionary as a cookbook-style recipe."""
+    output = []
+    
+    # Title
+    title = recipe_dict.get('title', recipe_dict.get('name', 'Recipe'))
+    output.append("=" * 60)
+    output.append(f"🍰 {title}")
+    output.append("=" * 60)
+    
+    # Servings
+    servings = recipe_dict.get('servings', 'Unknown')
+    output.append(f"👥 Serves: {servings}")
+    output.append("")
+    
+    # Ingredients
+    output.append("📋 INGREDIENTS:")
+    output.append("-" * 20)
+    
+    ingredients = recipe_dict.get('ingredients', [])
+    for ing in ingredients:
+        name = ing.get('name', '')
+        amount = ing.get('amount', '')
+        unit = ing.get('unit', '')
+        notes = ing.get('notes', '')
+        
+        if amount and unit:
+            output.append(f"• {amount} {unit} {name}")
+        else:
+            output.append(f"• {name}")
+        
+        if notes:
+            output.append(f"  💡 {notes}")
+    
+    output.append("")
+    
+    # Instructions
+    output.append("👨‍🍳 INSTRUCTIONS:")
+    output.append("-" * 20)
+    
+    instructions = recipe_dict.get('instructions', '')
+    if instructions:
+        # Split by newlines and clean up numbering
+        instruction_lines = instructions.split('\n')
+        for line in instruction_lines:
+            if line.strip():
+                # Fix double numbering if present
+                if line.strip()[0].isdigit():
+                    parts = line.split('.', 2)
+                    if len(parts) >= 3 and parts[1].strip() and parts[1].strip()[0].isdigit():
+                        line = parts[0] + '. ' + parts[2].strip()
+                output.append(line.strip())
+    
+    output.append("")
+    
+    # Substitution notes
+    substitution_notes = recipe_dict.get('substitution_notes', '')
+    if substitution_notes:
+        output.append("🔄 SUBSTITUTION NOTES:")
+        output.append("-" * 20)
+        output.append(substitution_notes)
+        output.append("")
+    
+    return "\n".join(output)
+
+
+def format_cookbook_recipe(result: Dict[str, Any]) -> str:
+    """Format the transformed recipe in cookbook style."""
+    if not result["success"]:
+        return f"❌ Transformation failed: {result.get('error', 'Unknown error')}"
+    
+    # Check if we have a cookbook recipe from the agent
+    if "cookbook_recipe" in result:
+        # The agent returned a cookbook format directly
+        cookbook_data = result["cookbook_recipe"]
+        
+        # If it's a string, clean it up
+        if isinstance(cookbook_data, str):
+            # Clean up the cookbook text - fix double numbering in instructions
+            lines = cookbook_data.split('\n')
+            cleaned_lines = []
+            
+            for line in lines:
+                # Fix double numbering like "1. 1. Preheat oven" -> "1. Preheat oven"
+                if line.strip() and line.strip()[0].isdigit():
+                    # Check if it has double numbering
+                    parts = line.split('.', 2)
+                    if len(parts) >= 3 and parts[1].strip() and parts[1].strip()[0].isdigit():
+                        # Remove the duplicate number
+                        line = parts[0] + '. ' + parts[2].strip()
+                cleaned_lines.append(line)
+            
+            return '\n'.join(cleaned_lines)
+        
+        # If it's a dictionary, format it as a cookbook
+        elif isinstance(cookbook_data, dict):
+            return format_recipe_dict_as_cookbook(cookbook_data, result.get('dietary_restrictions', []))
+        
+        else:
+            return str(cookbook_data)
+    
+    # Fallback to old format if no cookbook recipe
+    original = result["original_recipe"]
+    substitutions = result.get("substitutions", [])
+    unchanged = result.get("unchanged_ingredients", [])
+    
+    # Create substitution mapping
+    sub_map = {sub['original_ingredient']: sub for sub in substitutions}
+    
+    # Build the cookbook format
+    output = []
+    output.append("=" * 60)
+    output.append(f"🍰 {original['name']} ({', '.join(result['dietary_restrictions']).title()})")
+    output.append("=" * 60)
+    output.append(f"👥 Serves: {original.get('servings', 'Unknown')}")
+    output.append("")
+    
+    # Ingredients section
+    output.append("📋 INGREDIENTS:")
+    output.append("-" * 20)
+    
+    # Process all ingredients (substituted and unchanged)
+    all_ingredients = []
+    
+    # Add unchanged ingredients
+    for ing in unchanged:
+        all_ingredients.append({
+            'amount': ing.get('amount', ''),
+            'name': ing.get('name', ''),
+            'unit': ing.get('unit', ''),
+            'substituted': False
+        })
+    
+    # Add substituted ingredients
+    for sub in substitutions:
+        original_ing = None
+        # Find the original ingredient data
+        for ing in original.get('ingredients', []):
+            if ing.get('name') == sub['original_ingredient']:
+                original_ing = ing
+                break
+        
+        if original_ing:
+            all_ingredients.append({
+                'amount': original_ing.get('amount', ''),
+                'name': sub['substituted_ingredient'],
+                'unit': original_ing.get('unit', ''),
+                'substituted': True,
+                'original': sub['original_ingredient'],
+                'notes': sub.get('contextual_notes', '')
+            })
+    
+    # Sort ingredients to maintain original order
+    original_ingredients = original.get('ingredients', [])
+    sorted_ingredients = []
+    for orig_ing in original_ingredients:
+        orig_name = orig_ing.get('name', '')
+        # Find matching ingredient in our list
+        for ing in all_ingredients:
+            if (ing.get('original', ing.get('name', '')) == orig_name and 
+                ing not in sorted_ingredients):
+                sorted_ingredients.append(ing)
+                break
+    
+    # Print ingredients
+    for ing in sorted_ingredients:
+        if ing['substituted']:
+            output.append(f"• {ing['amount']} {ing['name']} (substituted for {ing['original']})")
+            if ing.get('notes'):
+                output.append(f"  💡 {ing['notes']}")
+        else:
+            output.append(f"• {ing['amount']} {ing['name']}")
+    
+    output.append("")
+    
+    # Instructions section
+    output.append("👨‍🍳 INSTRUCTIONS:")
+    output.append("-" * 20)
+    instructions = original.get('instructions', '').split('\n')
+    for i, instruction in enumerate(instructions, 1):
+        if instruction.strip():
+            output.append(f"{i}. {instruction.strip()}")
+    
+    output.append("")
+    
+    # Substitutions notes
+    if substitutions:
+        output.append("🔄 SUBSTITUTION NOTES:")
+        output.append("-" * 20)
+        for sub in substitutions:
+            output.append(f"• {sub['original_ingredient']} → {sub['substituted_ingredient']}")
+            output.append(f"  🤖 {sub['reasoning']}")
+            if sub.get('contextual_notes'):
+                output.append(f"  💡 {sub['contextual_notes']}")
+            output.append("")
+    
+    return "\n".join(output)
+
+
 def print_agent_results(result: Dict[str, Any]):
     """Print the results from the LLM agent transformation."""
     if not result["success"]:
         print(f"❌ Transformation failed: {result.get('error', 'Unknown error')}")
         return
     
-    print(f"🤖 LLM Agent Recipe Transformation Results")
+    # Print the cookbook format
+    cookbook_recipe = format_cookbook_recipe(result)
+    print(cookbook_recipe)
+    
+    # Also print a summary
+    print("\n" + "=" * 60)
+    print("📊 TRANSFORMATION SUMMARY")
     print("=" * 60)
-    
-    # Recipe info
-    original = result["original_recipe"]
-    print(f"📝 Recipe: {original['name']}")
-    print(f"📋 Dietary Restrictions: {', '.join(result['dietary_restrictions'])}")
-    print(f"👥 Servings: {original.get('servings', 'Unknown')}")
-    
-    # Recipe context (if available)
-    context = result.get("recipe_context", {})
-    if context:
-        print(f"\n🔍 Recipe Analysis:")
-        print(f"   Type: {context.get('recipe_type', 'Unknown')}")
-        print(f"   Cooking Method: {context.get('cooking_method', 'Unknown')}")
-        print(f"   Flavor Profile: {context.get('flavor_profile', 'Unknown')}")
-    
-    # Substitutions
-    substitutions = result.get("substitutions", [])
-    if substitutions:
-        print(f"\n🔄 LLM-Guided Substitutions ({len(substitutions)}):")
-        for i, sub in enumerate(substitutions, 1):
-            print(f"   {i}. {sub['original_ingredient']} → {sub['substituted_ingredient']}")
-            print(f"      🤖 Reasoning: {sub['reasoning']}")
-            print(f"      📊 Confidence: {sub['confidence']:.2f}")
-            if sub.get('contextual_notes'):
-                print(f"      💡 Notes: {sub['contextual_notes']}")
-            print()
-    else:
-        print(f"\n✅ No substitutions needed - recipe is already compliant!")
-    
-    # Unchanged ingredients
-    unchanged = result.get("unchanged_ingredients", [])
-    if unchanged:
-        print(f"✅ Unchanged Ingredients ({len(unchanged)}):")
-        for ing in unchanged:
-            print(f"   • {ing.get('amount', '')} {ing.get('name', '')}")
-    
-    # Agent reasoning
-    agent_reasoning = result.get("agent_reasoning", "")
-    if agent_reasoning:
-        print(f"\n🤖 Agent Summary: {agent_reasoning}")
+    print(f"✅ Successfully transformed recipe for: {', '.join(result['dietary_restrictions'])}")
+    print(f"🔄 Total substitutions made: {result.get('total_substitutions', 0)}")
+    print(f"🧠 Agent reasoning: {result.get('agent_reasoning', 'LLM made contextual decisions')}")
 
 
 def save_agent_output(result: Dict[str, Any], output_file: str):
     """Save the agent's output to a file."""
     try:
+        # Save both cookbook format and JSON
+        cookbook_recipe = format_cookbook_recipe(result)
+        
+        # Save cookbook format
+        cookbook_file = output_file.replace('.json', '.txt')
+        with open(cookbook_file, 'w') as f:
+            f.write(cookbook_recipe)
+        print(f"📖 Cookbook recipe saved to: {cookbook_file}")
+        
+        # Also save JSON for reference
         with open(output_file, 'w') as f:
             json.dump(result, f, indent=2)
-        print(f"💾 Agent results saved to: {output_file}")
+        print(f"💾 JSON data saved to: {output_file}")
     except Exception as e:
         print(f"❌ Failed to save results: {str(e)}")
 
