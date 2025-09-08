@@ -920,50 +920,14 @@ class RestrictionKnowledgeBase:
             )
         }
         
-        # Combine all restrictions
-        all_restrictions.update(gluten_free_restrictions)
-        all_restrictions.update(keto_restrictions)
-        all_restrictions.update(vegan_restrictions)
-        all_restrictions.update(dairy_free_restrictions)
-        all_restrictions.update(paleo_restrictions)
-        all_restrictions.update(soy_free_restrictions)
-        all_restrictions.update(egg_free_restrictions)
-        all_restrictions.update(nut_free_restrictions)
-        
-        # Add vegan egg restrictions
-        vegan_egg_restrictions = {
-            "eggs": IngredientRestrictions(
-                original_ingredient="eggs",
-                diet_type="vegan",
-                substitution_options=[
-                    SubstitutionOption(
-                        name="flax egg",
-                        ratio="1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
-                        unit_conversion="1 egg ≈ 50g",
-                        notes="Mix and let sit 5 minutes. Good for binding."
-                    ),
-                    SubstitutionOption(
-                        name="chia egg",
-                        ratio="1 egg = 1 Tbsp chia seeds + 3 Tbsp water",
-                        unit_conversion="1 egg ≈ 50g",
-                        notes="Mix and let sit 10 minutes. Similar to flax egg."
-                    ),
-                    SubstitutionOption(
-                        name="applesauce",
-                        ratio="1 egg = 1/4 cup applesauce",
-                        unit_conversion="1 egg ≈ 60ml",
-                        notes="Adds moisture. Best for sweet baked goods."
-                    ),
-                    SubstitutionOption(
-                        name="banana",
-                        ratio="1 egg = 1/2 mashed banana",
-                        unit_conversion="1 egg ≈ 60g",
-                        notes="Adds sweetness and moisture. Use ripe bananas."
-                    )
-                ],
-                forbidden_tags=["eggs", "egg", "egg-based", "dairy", "animal-products"]
-            )
-        }
+        # Combine all restrictions using composite keys to avoid overwrites
+        for restriction_dict in [gluten_free_restrictions, keto_restrictions, vegan_restrictions, 
+                                dairy_free_restrictions, paleo_restrictions, soy_free_restrictions, 
+                                egg_free_restrictions, nut_free_restrictions]:
+            for ingredient, restriction in restriction_dict.items():
+                # Use composite key to handle multiple diet types for same ingredient
+                key = f"{ingredient}_{restriction.diet_type}"
+                all_restrictions[key] = restriction
         
         # Add keto sugar restrictions
         keto_sugar_restrictions = {
@@ -1000,14 +964,11 @@ class RestrictionKnowledgeBase:
             )
         }
         
-        # Add vegan egg restrictions (separate from egg-free)
-        all_restrictions.update(vegan_egg_restrictions)
+        # Add keto sugar restrictions
         all_restrictions.update(keto_sugar_restrictions)
         
-        # Add all restrictions to the knowledge base
-        for ingredient, restriction in all_restrictions.items():
-            # Use a composite key to handle multiple diet types for same ingredient
-            key = f"{ingredient}_{restriction.diet_type}"
+        # Add all restrictions to the knowledge base (already using composite keys)
+        for key, restriction in all_restrictions.items():
             self.restrictions[key] = restriction
             self.diet_types.add(restriction.diet_type)
     

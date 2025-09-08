@@ -116,7 +116,7 @@ class UnitAwareSubstitutionEngine:
             original_quantity=original_quantity,
             
             substituted_ingredient=substitution_name,
-            substituted_amount=f"{final_quantity:.2f} {final_unit}",
+            substituted_amount=f"{final_quantity:.0f} {final_unit}" if final_quantity == int(final_quantity) else f"{final_quantity} {final_unit}",
             substituted_unit=final_unit,
             substituted_quantity=final_quantity,
             
@@ -187,10 +187,12 @@ class UnitAwareSubstitutionEngine:
                         )
                         
                         if substitution.conversion_applied:
+                            converted_amount = substitution.conversion_result.converted_amount
+                            formatted_amount = f"{converted_amount:.0f}" if converted_amount == int(converted_amount) else f"{converted_amount}"
                             change_log.append(
                                 f"  Applied unit conversion: {substitution.conversion_result.original_amount} "
                                 f"{substitution.conversion_result.original_unit} → "
-                                f"{substitution.conversion_result.converted_amount:.2f} "
+                                f"{formatted_amount} "
                                 f"{substitution.conversion_result.converted_unit}"
                             )
                     

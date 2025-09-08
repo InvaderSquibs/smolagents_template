@@ -73,9 +73,9 @@ class IngredientCanonicalizer:
         
         # Dairy aliases
         self._add_alias_group(
-            canonical="whole milk",
-            aliases=["milk", "cow milk", "dairy milk", "regular milk"],
-            description="Standard whole milk"
+            canonical="milk",
+            aliases=["whole milk", "cow milk", "dairy milk", "regular milk"],
+            description="Standard milk"
         )
         
         self._add_alias_group(

@@ -59,7 +59,7 @@ def parse_ingredient_line(line: str) -> Dict[str, str]:
             if len(match.groups()) == 3:
                 amount, unit, name = match.groups()
                 return {
-                    "amount": amount.strip(),
+                    "amount": line.strip(),  # Keep the full original string
                     "unit": unit.strip(),
                     "name": name.strip()
                 }
