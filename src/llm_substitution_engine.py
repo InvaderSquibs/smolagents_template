@@ -11,8 +11,8 @@ This module implements the core substitution logic where:
 import json
 from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass, asdict
-from unified_substitution_system import UnifiedSubstitutionSystem
-from restriction_knowledge import SubstitutionOption
+from restriction_knowledge import RestrictionKnowledgeBase, SubstitutionOption
+from ingredient_canonicalizer import IngredientCanonicalizer
 
 
 @dataclass
@@ -53,7 +53,8 @@ class LLMSubstitutionEngine:
     """Handles LLM-guided substitution with deterministic ratio calculations."""
     
     def __init__(self):
-        self.unified_system = UnifiedSubstitutionSystem()
+        self.knowledge_base = RestrictionKnowledgeBase()
+        self.canonicalizer = IngredientCanonicalizer()
     
     def get_substitution_options_for_llm(self, ingredient: str, diet_type: str) -> Dict[str, Any]:
         """
@@ -67,13 +68,13 @@ class LLMSubstitutionEngine:
             Dictionary with options and context for LLM
         """
         # Canonicalize ingredient
-        canonical = self.unified_system.canonicalizer.canonicalize(ingredient)
+        canonical = self.canonicalizer.canonicalize(ingredient)
         
         # Get substitution options
-        options = self.unified_system.get_substitution_options(ingredient, diet_type)
+        options = self.knowledge_base.get_substitution_options(ingredient, diet_type)
         
         # Check if forbidden
-        is_forbidden = self.unified_system.is_forbidden(ingredient, diet_type)
+        is_forbidden = self.knowledge_base.is_forbidden(ingredient, diet_type)
         
         return {
             "original_ingredient": ingredient,
@@ -104,7 +105,7 @@ class LLMSubstitutionEngine:
         Returns:
             Tuple of (is_valid, error_message)
         """
-        options = self.unified_system.get_substitution_options(ingredient, diet_type)
+        options = self.knowledge_base.get_substitution_options(ingredient, diet_type)
         
         # Check if the selected substitution is in our available options
         valid_names = [opt.name.lower() for opt in options]
@@ -125,7 +126,7 @@ class LLMSubstitutionEngine:
         Returns:
             Dictionary with calculated ratios and units
         """
-        options = self.unified_system.get_substitution_options(ingredient, diet_type)
+        options = self.knowledge_base.get_substitution_options(ingredient, diet_type)
         
         # Find the selected option
         selected_option = None
@@ -139,7 +140,7 @@ class LLMSubstitutionEngine:
         
         return {
             "original_ingredient": ingredient,
-            "canonical_ingredient": self.unified_system.canonicalizer.canonicalize(ingredient),
+            "canonical_ingredient": self.canonicalizer.canonicalize(ingredient),
             "selected_substitution": selected_option.name,
             "ratio": selected_option.ratio,
             "unit_conversion": selected_option.unit_conversion,

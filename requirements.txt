@@ -15,4 +15,5 @@ num2words
 quanto
 bitsandbytes
 optimum-quanto
+python-dotenv
 
