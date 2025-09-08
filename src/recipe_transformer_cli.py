@@ -9,6 +9,7 @@ transforming recipes based on dietary restrictions.
 import json
 import argparse
 import sys
+import re
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 from unit_aware_substitution import UnitAwareSubstitutionEngine, UnitAwareRecipeResult
@@ -91,6 +92,8 @@ class RecipeTransformer:
         
         # Convert transformed ingredients to dictionaries
         transformed_ingredients = []
+        
+        # Add unchanged ingredients
         for ing in result.unchanged_ingredients:
             transformed_ingredients.append({
                 "name": ing.name,
@@ -100,7 +103,7 @@ class RecipeTransformer:
                 "notes": ing.notes
             })
         
-        # Add substituted ingredients
+        # Add substituted ingredients (these replace the original ingredients)
         for sub in result.substitutions:
             transformed_ingredients.append({
                 "name": sub.substituted_ingredient,
@@ -154,6 +157,175 @@ class RecipeTransformer:
         }
 
 
+def parse_plain_text_recipe(file_path: str) -> RecipeInput:
+    """Parse a plain text recipe file and convert it to RecipeInput format."""
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read().strip()
+    
+    lines = content.split('\n')
+    
+    # Find recipe name (first non-empty line that's not a section header)
+    recipe_name = ""
+    for line in lines:
+        line_stripped = line.strip()
+        if (line_stripped and 
+            not line_stripped.lower().startswith(('ingredients:', 'instructions:', 'serves', 'directions:')) and
+            not line_stripped.startswith('{') and  # Skip JSON artifacts
+            len(line_stripped) > 1):  # Skip single characters
+            recipe_name = line_stripped
+            break
+    
+    # Find ingredients section
+    ingredients = []
+    in_ingredients = False
+    instructions_lines = []
+    servings = None
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        # Check for ingredients section
+        if line.lower().startswith('ingredients:'):
+            in_ingredients = True
+            continue
+        elif line.lower().startswith(('instructions:', 'directions:')):
+            in_ingredients = False
+            continue
+        elif line.lower().startswith('serves'):
+            # Extract serving count
+            match = re.search(r'serves?\s+(\d+)', line.lower())
+            if match:
+                servings = int(match.group(1))
+            continue
+        
+        if in_ingredients:
+            # Parse ingredient line
+            if line and not line.lower().startswith('for '):  # Skip section headers like "For Frosting:"
+                ingredient_data = parse_ingredient_line(line)
+                if ingredient_data:
+                    ingredients.append(ingredient_data)
+            elif line.lower().startswith('for '):
+                # Handle section headers like "For Frosting:" - treat as a new ingredients section
+                continue
+        else:
+            # Collect instructions
+            if line and not line.lower().startswith(('ingredients:', 'serves')):
+                instructions_lines.append(line)
+    
+    # Join instructions
+    instructions = '\n'.join(instructions_lines) if instructions_lines else None
+    
+    return RecipeInput(
+        name=recipe_name,
+        ingredients=ingredients,
+        instructions=instructions,
+        servings=servings
+    )
+
+
+def parse_ingredient_line(line: str) -> Optional[Dict[str, Any]]:
+    """Parse a single ingredient line into structured data."""
+    # Remove any leading dashes or bullets
+    line = re.sub(r'^[-•]\s*', '', line).strip()
+    
+    # Pattern to match: amount + unit + ingredient name
+    # Examples: "2 1/4 cups all-purpose flour", "1/2 cup butter, softened", "2 large eggs"
+    
+    # First try: amount + unit + rest (most common case)
+    pattern1 = r'^(\d+(?:\s+\d+/\d+)?)\s+(cups?|tbsp|tsp|oz|lb|large|small|medium)\s+(.+)$'
+    match1 = re.match(pattern1, line, re.IGNORECASE)
+    
+    if match1:
+        amount_str = match1.group(1).strip()
+        unit = match1.group(2).strip()
+        ingredient_name = match1.group(3).strip()
+        
+        quantity = parse_quantity(amount_str)
+        
+        return {
+            "name": ingredient_name,
+            "amount": f"{amount_str} {unit}",
+            "unit": unit,
+            "quantity": quantity
+        }
+    
+    # Second try: amount + unit + rest (broader unit matching)
+    pattern2 = r'^(\d+(?:\s+\d+/\d+)?)\s+([a-zA-Z]+)\s+(.+)$'
+    match2 = re.match(pattern2, line)
+    
+    if match2:
+        amount_str = match2.group(1).strip()
+        unit = match2.group(2).strip()
+        ingredient_name = match2.group(3).strip()
+        
+        quantity = parse_quantity(amount_str)
+        
+        return {
+            "name": ingredient_name,
+            "amount": f"{amount_str} {unit}",
+            "unit": unit,
+            "quantity": quantity
+        }
+    
+    # Fallback: treat the whole line as ingredient name
+    return {
+        "name": line,
+        "amount": line,
+        "unit": "",
+        "quantity": 1.0
+    }
+
+
+def parse_quantity(amount_str: str) -> float:
+    """Parse quantity string to float, handling fractions and mixed numbers."""
+    # Handle mixed numbers like "2 1/4"
+    mixed_match = re.match(r'(\d+)\s+(\d+/\d+)', amount_str)
+    if mixed_match:
+        whole = int(mixed_match.group(1))
+        fraction = mixed_match.group(2)
+        return whole + parse_fraction(fraction)
+    
+    # Handle simple fractions
+    if '/' in amount_str:
+        return parse_fraction(amount_str)
+    
+    # Handle whole numbers
+    try:
+        return float(amount_str)
+    except ValueError:
+        return 1.0
+
+
+def parse_fraction(fraction_str: str) -> float:
+    """Parse a fraction string to float."""
+    fraction_map = {
+        "1/8": 0.125,
+        "1/4": 0.25,
+        "1/3": 0.333,
+        "3/8": 0.375,
+        "1/2": 0.5,
+        "5/8": 0.625,
+        "2/3": 0.667,
+        "3/4": 0.75,
+        "7/8": 0.875,
+    }
+    
+    if fraction_str in fraction_map:
+        return fraction_map[fraction_str]
+    
+    # Try to parse other fractions
+    try:
+        parts = fraction_str.split('/')
+        if len(parts) == 2:
+            return float(parts[0]) / float(parts[1])
+    except (ValueError, ZeroDivisionError):
+        pass
+    
+    return 1.0
+
+
 def create_sample_recipe() -> RecipeInput:
     """Create a sample recipe for testing."""
     return RecipeInput(
@@ -189,8 +361,10 @@ def print_recipe_output(output: RecipeOutput, verbose: bool = False):
     
     if output.substitutions:
         print(f"\n🔄 Substitutions Made ({len(output.substitutions)}):")
-        for sub in output.substitutions:
-            print(f"   • {sub['original_ingredient']} ({sub['original_amount']}) → {sub['substituted_ingredient']} ({sub['substituted_amount']})")
+        for i, sub in enumerate(output.substitutions, 1):
+            print(f"  {i}. {sub['original_ingredient']} → {sub['substituted_ingredient']}")
+            print(f"     Ratio: {sub['substitution_ratio']}")
+            print(f"     Notes: {sub['notes']}")
             if sub['conversion_applied']:
                 print(f"     (Unit conversion applied)")
     
@@ -212,7 +386,30 @@ def print_recipe_output(output: RecipeOutput, verbose: bool = False):
     print(f"\n📖 Transformed Recipe:")
     print("-" * 40)
     for ing in output.transformed_ingredients:
-        print(f"• {ing['amount']} {ing['name']}")
+        # Format the amount properly, avoiding 'item' placeholders
+        amount_display = ing['amount']
+        name = ing['name']
+        
+        if amount_display and not amount_display.startswith('1 item'):
+            # Clean up the amount display to show proper format
+            if amount_display.endswith(f" {name}"):
+                # Remove duplicate ingredient name
+                clean_amount = amount_display.replace(f" {name}", "")
+                print(f"• {clean_amount} {name}")
+            else:
+                print(f"• {amount_display} {name}")
+        else:
+            # Fallback for when unit parsing fails
+            quantity = ing.get('quantity', 1.0)
+            unit = ing.get('unit', '')
+            if unit and unit != 'item':
+                # Format decimal quantities nicely
+                if quantity == int(quantity):
+                    print(f"• {int(quantity)} {unit} {name}")
+                else:
+                    print(f"• {quantity} {unit} {name}")
+            else:
+                print(f"• {quantity} {name}")
     
     if output.instructions:
         print(f"\n👨‍🍳 Instructions:")
@@ -262,9 +459,16 @@ def main():
         recipe_input = create_sample_recipe()
     elif args.recipe:
         try:
-            with open(args.recipe, 'r') as f:
-                recipe_data = json.load(f)
-            recipe_input = RecipeInput(**recipe_data)
+            # Check file extension to determine parsing method
+            if args.recipe.lower().endswith('.json'):
+                # Load JSON recipe
+                with open(args.recipe, 'r') as f:
+                    recipe_data = json.load(f)
+                recipe_input = RecipeInput(**recipe_data)
+            else:
+                # Parse plain text recipe
+                recipe_input = parse_plain_text_recipe(args.recipe)
+                print(f"📝 Parsed plain text recipe: {recipe_input.name}")
         except Exception as e:
             print(f"Error loading recipe: {e}")
             return
@@ -285,7 +489,14 @@ def main():
         
         # Save output if requested
         if args.recipe:
-            output_file = args.recipe.replace('.json', '_transformed.json')
+            # Create output filename based on input
+            if args.recipe.lower().endswith('.json'):
+                output_file = args.recipe.replace('.json', '_transformed.json')
+            else:
+                # For .txt files, create a .json output file
+                base_name = args.recipe.rsplit('.', 1)[0] if '.' in args.recipe else args.recipe
+                output_file = f"{base_name}_transformed.json"
+            
             with open(output_file, 'w') as f:
                 json.dump(asdict(output), f, indent=2)
             print(f"\n💾 Transformed recipe saved to: {output_file}")

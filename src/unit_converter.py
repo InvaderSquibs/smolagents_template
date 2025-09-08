@@ -168,12 +168,13 @@ class UnitConverter:
         # Clean the string
         amount_str = amount_str.strip().lower()
         
-        # Handle fractions
+        # Handle fractions first
         amount_str = self._convert_fractions(amount_str)
         
         # Extract number and unit
-        # Match patterns like "1 cup", "2.5 tbsp", "1/2 tsp", etc.
-        pattern = r'^(\d+(?:\.\d+)?)\s*(.*)$'
+        # Match patterns like "1 cup", "2.5 tbsp", "0.5 tsp", "1/2 cup butter, softened", etc.
+        # Updated pattern to handle fractions and extract only the first unit
+        pattern = r'^(\d+(?:\.\d+)?)\s+([a-zA-Z]+)'
         match = re.match(pattern, amount_str)
         
         if match:
@@ -198,6 +199,19 @@ class UnitConverter:
             "7/8": "0.875",
         }
         
+        # Handle mixed numbers like "2 1/4"
+        import re
+        mixed_pattern = r'(\d+)\s+(\d+/\d+)'
+        match = re.search(mixed_pattern, amount_str)
+        if match:
+            whole_number = int(match.group(1))
+            fraction = match.group(2)
+            if fraction in fraction_map:
+                decimal_part = float(fraction_map[fraction])
+                total = whole_number + decimal_part
+                amount_str = amount_str.replace(match.group(0), str(total))
+        
+        # Handle standalone fractions
         for fraction, decimal in fraction_map.items():
             amount_str = amount_str.replace(fraction, decimal)
         

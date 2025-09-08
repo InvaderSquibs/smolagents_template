@@ -245,7 +245,11 @@ def main():
     
     print("📖 Transformed Recipe:")
     for ing in result.transformed_ingredients:
-        print(f"  • {ing['amount']} {ing['name']}")
+        # If amount contains the full ingredient string, use it directly
+        if ing['amount'] and ing['name'] in ing['amount']:
+            print(f"  • {ing['amount']}")
+        else:
+            print(f"  • {ing['amount']} {ing['name']}")
     
     if result.warnings:
         print()

@@ -1,0 +1,357 @@
+{
+  "original_name": "Chocolate Layer Cake",
+  "transformed_name": "Chocolate Layer Cake (vegan)",
+  "diet_restrictions": [
+    "vegan"
+  ],
+  "original_ingredients": [
+    {
+      "name": "all-purpose flour",
+      "amount": "2 1/4 cups",
+      "unit": "cups",
+      "quantity": 2.25
+    },
+    {
+      "name": "granulated sugar",
+      "amount": "2 cups",
+      "unit": "cups",
+      "quantity": 2.0
+    },
+    {
+      "name": "3/4 cup unsweetened cocoa powder",
+      "amount": "3/4 cup unsweetened cocoa powder",
+      "unit": "",
+      "quantity": 1.0
+    },
+    {
+      "name": "baking powder",
+      "amount": "1 1/2 tsp",
+      "unit": "tsp",
+      "quantity": 1.5
+    },
+    {
+      "name": "baking soda",
+      "amount": "1 1/2 tsp",
+      "unit": "tsp",
+      "quantity": 1.5
+    },
+    {
+      "name": "salt",
+      "amount": "1 tsp",
+      "unit": "tsp",
+      "quantity": 1.0
+    },
+    {
+      "name": "eggs",
+      "amount": "2 large",
+      "unit": "large",
+      "quantity": 2.0
+    },
+    {
+      "name": "milk",
+      "amount": "1 cup",
+      "unit": "cup",
+      "quantity": 1.0
+    },
+    {
+      "name": "1/2 cup vegetable oil",
+      "amount": "1/2 cup vegetable oil",
+      "unit": "",
+      "quantity": 1.0
+    },
+    {
+      "name": "vanilla extract",
+      "amount": "2 tsp",
+      "unit": "tsp",
+      "quantity": 2.0
+    },
+    {
+      "name": "boiling water",
+      "amount": "1 cup",
+      "unit": "cup",
+      "quantity": 1.0
+    },
+    {
+      "name": "1/2 cup butter, softened",
+      "amount": "1/2 cup butter, softened",
+      "unit": "",
+      "quantity": 1.0
+    },
+    {
+      "name": "2/3 cup unsweetened cocoa powder",
+      "amount": "2/3 cup unsweetened cocoa powder",
+      "unit": "",
+      "quantity": 1.0
+    },
+    {
+      "name": "powdered sugar",
+      "amount": "3 cups",
+      "unit": "cups",
+      "quantity": 3.0
+    },
+    {
+      "name": "1/3 cup milk",
+      "amount": "1/3 cup milk",
+      "unit": "",
+      "quantity": 1.0
+    },
+    {
+      "name": "vanilla extract",
+      "amount": "1 tsp",
+      "unit": "tsp",
+      "quantity": 1.0
+    }
+  ],
+  "transformed_ingredients": [
+    {
+      "name": "all-purpose flour",
+      "amount": "2 1/4 cups",
+      "unit": "cups",
+      "quantity": 2.25,
+      "notes": ""
+    },
+    {
+      "name": "granulated sugar",
+      "amount": "2 cups",
+      "unit": "cups",
+      "quantity": 2.0,
+      "notes": ""
+    },
+    {
+      "name": "3/4 cup unsweetened cocoa powder",
+      "amount": "3/4 cup unsweetened cocoa powder",
+      "unit": "",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "baking powder",
+      "amount": "1 1/2 tsp",
+      "unit": "tsp",
+      "quantity": 1.5,
+      "notes": ""
+    },
+    {
+      "name": "baking soda",
+      "amount": "1 1/2 tsp",
+      "unit": "tsp",
+      "quantity": 1.5,
+      "notes": ""
+    },
+    {
+      "name": "salt",
+      "amount": "1 tsp",
+      "unit": "tsp",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "1/2 cup vegetable oil",
+      "amount": "1/2 cup vegetable oil",
+      "unit": "",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "vanilla extract",
+      "amount": "2 tsp",
+      "unit": "tsp",
+      "quantity": 2.0,
+      "notes": ""
+    },
+    {
+      "name": "boiling water",
+      "amount": "1 cup",
+      "unit": "cup",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "2/3 cup unsweetened cocoa powder",
+      "amount": "2/3 cup unsweetened cocoa powder",
+      "unit": "",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "powdered sugar",
+      "amount": "3 cups",
+      "unit": "cups",
+      "quantity": 3.0,
+      "notes": ""
+    },
+    {
+      "name": "vanilla extract",
+      "amount": "1 tsp",
+      "unit": "tsp",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "flax egg",
+      "amount": "2 large flax egg",
+      "unit": "large",
+      "quantity": 2.0,
+      "notes": "Substituted for eggs"
+    },
+    {
+      "name": "oat milk",
+      "amount": "1 cup oat milk",
+      "unit": "cup",
+      "quantity": 1.0,
+      "notes": "Substituted for milk"
+    },
+    {
+      "name": "coconut oil",
+      "amount": "1/2 cup coconut oil",
+      "unit": "cup",
+      "quantity": 0.5,
+      "notes": "Substituted for 1/2 cup butter, softened"
+    },
+    {
+      "name": "oat milk",
+      "amount": "1/3 cup oat milk",
+      "unit": "cup",
+      "quantity": 0.333,
+      "notes": "Substituted for 1/3 cup milk"
+    }
+  ],
+  "substitutions": [
+    {
+      "original_ingredient": "eggs",
+      "original_amount": "2 large",
+      "substituted_ingredient": "flax egg",
+      "substituted_amount": "2 large flax egg",
+      "conversion_applied": false,
+      "substitution_ratio": "1 egg = 1 Tbsp ground flaxseed + 3 Tbsp water",
+      "notes": "Mix and let sit 5 minutes. Good for binding.",
+      "confidence": 1.0
+    },
+    {
+      "original_ingredient": "milk",
+      "original_amount": "1 cup",
+      "substituted_ingredient": "oat milk",
+      "substituted_amount": "1 cup oat milk",
+      "conversion_applied": false,
+      "substitution_ratio": "1:1 substitution",
+      "notes": "Creamy texture, neutral flavor. Good for coffee and baking.",
+      "confidence": 1.0
+    },
+    {
+      "original_ingredient": "1/2 cup butter, softened",
+      "original_amount": "1/2 cup butter, softened",
+      "substituted_ingredient": "coconut oil",
+      "substituted_amount": "1/2 cup coconut oil",
+      "conversion_applied": false,
+      "substitution_ratio": "1:1 substitution",
+      "notes": "Solid at room temperature. Good for baking.",
+      "confidence": 1.0
+    },
+    {
+      "original_ingredient": "1/3 cup milk",
+      "original_amount": "1/3 cup milk",
+      "substituted_ingredient": "oat milk",
+      "substituted_amount": "1/3 cup oat milk",
+      "conversion_applied": false,
+      "substitution_ratio": "1:1 substitution",
+      "notes": "Creamy texture, neutral flavor. Good for coffee and baking.",
+      "confidence": 1.0
+    }
+  ],
+  "unchanged_ingredients": [
+    {
+      "name": "all-purpose flour",
+      "amount": "2 1/4 cups",
+      "unit": "cups",
+      "quantity": 2.25,
+      "notes": ""
+    },
+    {
+      "name": "granulated sugar",
+      "amount": "2 cups",
+      "unit": "cups",
+      "quantity": 2.0,
+      "notes": ""
+    },
+    {
+      "name": "3/4 cup unsweetened cocoa powder",
+      "amount": "3/4 cup unsweetened cocoa powder",
+      "unit": "",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "baking powder",
+      "amount": "1 1/2 tsp",
+      "unit": "tsp",
+      "quantity": 1.5,
+      "notes": ""
+    },
+    {
+      "name": "baking soda",
+      "amount": "1 1/2 tsp",
+      "unit": "tsp",
+      "quantity": 1.5,
+      "notes": ""
+    },
+    {
+      "name": "salt",
+      "amount": "1 tsp",
+      "unit": "tsp",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "1/2 cup vegetable oil",
+      "amount": "1/2 cup vegetable oil",
+      "unit": "",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "vanilla extract",
+      "amount": "2 tsp",
+      "unit": "tsp",
+      "quantity": 2.0,
+      "notes": ""
+    },
+    {
+      "name": "boiling water",
+      "amount": "1 cup",
+      "unit": "cup",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "2/3 cup unsweetened cocoa powder",
+      "amount": "2/3 cup unsweetened cocoa powder",
+      "unit": "",
+      "quantity": 1.0,
+      "notes": ""
+    },
+    {
+      "name": "powdered sugar",
+      "amount": "3 cups",
+      "unit": "cups",
+      "quantity": 3.0,
+      "notes": ""
+    },
+    {
+      "name": "vanilla extract",
+      "amount": "1 tsp",
+      "unit": "tsp",
+      "quantity": 1.0,
+      "notes": ""
+    }
+  ],
+  "warnings": [],
+  "change_log": [
+    "Replaced 'eggs' (2 large) with 'flax egg' (2 large flax egg)",
+    "Replaced 'milk' (1 cup) with 'oat milk' (1 cup oat milk)",
+    "Replaced '1/2 cup butter, softened' (1/2 cup butter, softened) with 'coconut oil' (1/2 cup coconut oil)",
+    "Replaced '1/3 cup milk' (1/3 cup milk) with 'oat milk' (1/3 cup oat milk)"
+  ],
+  "success": true,
+  "instructions": "Chocolate Layer Cake\n1. Preheat oven to 350\u00b0F (175\u00b0C).\n2. Grease and flour two 9-inch round cake pans.\n3. In a large bowl, mix flour, sugar, cocoa, baking powder, baking soda, and salt.\n4. Add eggs, milk, oil, and vanilla. Beat for 2 minutes.\n5. Stir in boiling water (batter will be thin).\n6. Pour into prepared pans.\n7. Bake for 30-35 minutes until toothpick comes out clean.\n8. Cool in pans for 10 minutes, then remove to wire racks.\n9. For frosting, beat butter and cocoa until smooth.\n10. Gradually beat in powdered sugar, milk, and vanilla.\n11. Frost cooled cake layers.",
+  "servings": 12
+}

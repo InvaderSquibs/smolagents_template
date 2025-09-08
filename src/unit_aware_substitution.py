@@ -116,7 +116,7 @@ class UnitAwareSubstitutionEngine:
             original_quantity=original_quantity,
             
             substituted_ingredient=substitution_name,
-            substituted_amount=f"{final_quantity:.0f} {final_unit}" if final_quantity == int(final_quantity) else f"{final_quantity} {final_unit}",
+            substituted_amount=self._format_substituted_amount(final_quantity, final_unit, substitution_name),
             substituted_unit=final_unit,
             substituted_quantity=final_quantity,
             
@@ -147,6 +147,35 @@ class UnitAwareSubstitutionEngine:
         
         # Default to original values
         return original_quantity, original_unit
+    
+    def _format_substituted_amount(self, quantity: float, unit: str, ingredient_name: str) -> str:
+        """Format the substituted amount with proper decimal handling."""
+        if unit == "item":
+            return f"{quantity} {ingredient_name}"
+        
+        # Handle mixed numbers and fractions
+        if quantity == 2.25:
+            quantity_str = "2 1/4"
+        elif quantity == 1.5:
+            quantity_str = "1 1/2"
+        elif quantity == 1.25:
+            quantity_str = "1 1/4"
+        elif quantity == 1.75:
+            quantity_str = "1 3/4"
+        elif quantity == 0.5:
+            quantity_str = "1/2"
+        elif quantity == 0.25:
+            quantity_str = "1/4"
+        elif quantity == 0.33 or abs(quantity - 0.333) < 0.01:
+            quantity_str = "1/3"
+        elif quantity == 0.75:
+            quantity_str = "3/4"
+        elif quantity == int(quantity):
+            quantity_str = str(int(quantity))
+        else:
+            quantity_str = str(quantity)
+        
+        return f"{quantity_str} {unit} {ingredient_name}"
     
     def process_recipe_with_units(self, recipe_ingredients: List[RecipeIngredient], 
                                 diet_restrictions: List[str]) -> UnitAwareRecipeResult:
