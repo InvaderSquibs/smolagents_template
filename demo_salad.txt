@@ -1,0 +1,27 @@
+python3 converter.py --recipe-file="demo_cake.txt" --restrictions="['keto']"
+Caesar Salad with Croutons
+
+Ingredients:
+1 large head romaine lettuce
+1/2 cup olive oil
+3 cloves garlic, minced
+1/2 cup grated Parmesan cheese
+2 tbsp fresh lemon juice
+1 tsp Dijon mustard
+1 tsp Worcestershire sauce
+1/2 tsp salt
+1/4 tsp black pepper
+2 large eggs
+1/4 cup croutons
+2 anchovy fillets, minced
+
+Instructions:
+1. Wash and tear lettuce into bite-sized pieces.
+2. In a small bowl, whisk together olive oil, garlic, Parmesan, lemon juice, mustard, Worcestershire, salt, and pepper.
+3. In a separate bowl, whisk eggs until frothy.
+4. Gradually whisk egg mixture into dressing.
+5. Add anchovies and whisk until smooth.
+6. Toss lettuce with dressing.
+7. Top with croutons and additional Parmesan.
+
+Serves 4
