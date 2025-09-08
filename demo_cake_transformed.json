@@ -1,8 +1,10 @@
 {
   "original_name": "Chocolate Layer Cake",
-  "transformed_name": "Chocolate Layer Cake (vegan)",
+  "transformed_name": "Chocolate Layer Cake (vegan, keto, nut-free)",
   "diet_restrictions": [
-    "vegan"
+    "vegan",
+    "keto",
+    "nut-free"
   ],
   "original_ingredients": [
     {
@@ -104,13 +106,6 @@
   ],
   "transformed_ingredients": [
     {
-      "name": "all-purpose flour",
-      "amount": "2 1/4 cups",
-      "unit": "cups",
-      "quantity": 2.25,
-      "notes": ""
-    },
-    {
       "name": "granulated sugar",
       "amount": "2 cups",
       "unit": "cups",
@@ -188,6 +183,13 @@
       "notes": ""
     },
     {
+      "name": "almond flour",
+      "amount": "2 1/4 cups almond flour",
+      "unit": "cups",
+      "quantity": 2.25,
+      "notes": "Substituted for all-purpose flour"
+    },
+    {
       "name": "flax egg",
       "amount": "2 large flax egg",
       "unit": "large",
@@ -217,6 +219,16 @@
     }
   ],
   "substitutions": [
+    {
+      "original_ingredient": "all-purpose flour",
+      "original_amount": "2 1/4 cups",
+      "substituted_ingredient": "almond flour",
+      "substituted_amount": "2 1/4 cups almond flour",
+      "conversion_applied": false,
+      "substitution_ratio": "1 cup flour = 1 cup almond flour",
+      "notes": "High protein, low carb. May need more liquid.",
+      "confidence": 1.0
+    },
     {
       "original_ingredient": "eggs",
       "original_amount": "2 large",
@@ -259,13 +271,6 @@
     }
   ],
   "unchanged_ingredients": [
-    {
-      "name": "all-purpose flour",
-      "amount": "2 1/4 cups",
-      "unit": "cups",
-      "quantity": 2.25,
-      "notes": ""
-    },
     {
       "name": "granulated sugar",
       "amount": "2 cups",
@@ -346,6 +351,7 @@
   ],
   "warnings": [],
   "change_log": [
+    "Replaced 'all-purpose flour' (2 1/4 cups) with 'almond flour' (2 1/4 cups almond flour)",
     "Replaced 'eggs' (2 large) with 'flax egg' (2 large flax egg)",
     "Replaced 'milk' (1 cup) with 'oat milk' (1 cup oat milk)",
     "Replaced '1/2 cup butter, softened' (1/2 cup butter, softened) with 'coconut oil' (1/2 cup coconut oil)",
