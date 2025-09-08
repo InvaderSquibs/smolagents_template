@@ -196,3 +196,6 @@ cython_debug/
 *~
 .virtual_environment
 
+# Project-specific files
+TODO.md
+
