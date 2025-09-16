@@ -196,3 +196,6 @@ cython_debug/
 *~
 .virtual_environment
 
+# RAG Vector Database (runtime artifacts)
+chroma_db/
+

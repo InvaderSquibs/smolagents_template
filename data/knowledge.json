@@ -1,0 +1,102 @@
+[
+  {
+    "id": "geometry_01",
+    "title": "Circle Area Formula",
+    "text": "The area of a circle is calculated using A = π × r², where r is the radius. For example, if radius is 5, the area would be π × 5² = 25π ≈ 78.54 square units."
+  },
+  {
+    "id": "geometry_02", 
+    "title": "Circle Circumference Formula",
+    "text": "The circumference of a circle is calculated using C = 2π × r, where r is the radius. For example, if radius is 5, the circumference would be 2π × 5 = 10π ≈ 31.42 units."
+  },
+  {
+    "id": "geometry_03",
+    "title": "Rectangle Area Formula", 
+    "text": "The area of a rectangle is calculated using A = length × width. For example, if length is 8 and width is 6, the area would be 8 × 6 = 48 square units."
+  },
+  {
+    "id": "geometry_04",
+    "title": "Triangle Area Formula",
+    "text": "The area of a triangle is calculated using A = ½ × base × height. For example, if base is 10 and height is 6, the area would be ½ × 10 × 6 = 30 square units."
+  },
+  {
+    "id": "geometry_05",
+    "title": "Pythagorean Theorem",
+    "text": "In a right triangle with legs a and b and hypotenuse c, the relationship is a² + b² = c². To find the hypotenuse: c = √(a² + b²). To find a leg: a = √(c² - b²)."
+  },
+  {
+    "id": "geometry_06",
+    "title": "Cylinder Volume Formula",
+    "text": "The volume of a cylinder is calculated using V = π × r² × h, where r is the radius and h is the height. For example, a cylinder with radius 2 inches and height 3 inches has volume V = π × 2² × 3 = 12π ≈ 37.7 cubic inches."
+  },
+  {
+    "id": "geometry_07",
+    "title": "Cylinder Surface Area Formula",
+    "text": "The surface area of a cylinder is calculated using SA = 2πr² + 2πrh, where r is the radius and h is the height. This includes the area of both circular ends (2πr²) plus the curved side (2πrh)."
+  },
+  {
+    "id": "physics_01",
+    "title": "Kinetic Energy Formula",
+    "text": "Kinetic energy is calculated as KE = ½ × m × v², where m is mass in kg and v is velocity in m/s. The result is in Joules. For example, a 2kg object moving at 5 m/s has KE = ½ × 2 × 5² = 25 Joules."
+  },
+  {
+    "id": "physics_02",
+    "title": "Force Formula (Newton's Second Law)",
+    "text": "Force equals mass times acceleration: F = m × a, where F is in Newtons, m is mass in kg, and a is acceleration in m/s². For example, a 10kg object with 2 m/s² acceleration experiences F = 10 × 2 = 20 Newtons."
+  },
+  {
+    "id": "physics_03",
+    "title": "Gravitational Potential Energy",
+    "text": "Gravitational potential energy is calculated as PE = m × g × h, where m is mass in kg, g is gravitational acceleration (9.8 m/s² on Earth), and h is height in meters. The result is in Joules."
+  },
+  {
+    "id": "conversion_01",
+    "title": "Temperature Conversion",
+    "text": "To convert Celsius to Fahrenheit: F = (C × 9/5) + 32. To convert Fahrenheit to Celsius: C = (F - 32) × 5/9. For example, 25°C = (25 × 9/5) + 32 = 77°F."
+  },
+  {
+    "id": "conversion_02",
+    "title": "Length Conversion",
+    "text": "Common length conversions: 1 meter = 3.28084 feet, 1 foot = 0.3048 meters, 1 inch = 2.54 centimeters, 1 kilometer = 0.621371 miles. To convert meters to feet: multiply by 3.28084."
+  },
+  {
+    "id": "conversion_03",
+    "title": "Weight/Mass Conversion",
+    "text": "Common weight conversions: 1 kilogram = 2.20462 pounds, 1 pound = 0.453592 kilograms, 1 ounce = 28.3495 grams. To convert kg to pounds: multiply by 2.20462."
+  },
+  {
+    "id": "finance_01",
+    "title": "Simple Interest Formula",
+    "text": "Simple interest is calculated as I = P × r × t, where P is principal amount, r is annual interest rate (as decimal), and t is time in years. Total amount = P + I. For example, $1000 at 5% for 2 years: I = 1000 × 0.05 × 2 = $100."
+  },
+  {
+    "id": "finance_02",
+    "title": "Compound Interest Formula",
+    "text": "Compound interest is calculated as A = P(1 + r/n)^(nt), where P is principal, r is annual rate, n is compounding frequency per year, and t is time in years. For annual compounding: A = P(1 + r)^t."
+  },
+  {
+    "id": "algebra_01",
+    "title": "Quadratic Formula",
+    "text": "For a quadratic equation ax² + bx + c = 0, the solutions are x = (-b ± √(b² - 4ac)) / 2a. The discriminant b² - 4ac determines the nature of roots: positive (two real), zero (one real), negative (two complex)."
+  },
+  {
+    "id": "algebra_02",
+    "title": "Distance Formula",
+    "text": "The distance between two points (x₁, y₁) and (x₂, y₂) is calculated as d = √((x₂ - x₁)² + (y₂ - y₁)²). For example, distance between (0,0) and (3,4) is √((3-0)² + (4-0)²) = √(9 + 16) = 5."
+  },
+  {
+    "id": "trig_01",
+    "title": "Basic Trigonometry",
+    "text": "In a right triangle: sin(θ) = opposite/hypotenuse, cos(θ) = adjacent/hypotenuse, tan(θ) = opposite/adjacent. The Pythagorean identity: sin²(θ) + cos²(θ) = 1. Common values: sin(30°) = 0.5, cos(60°) = 0.5, tan(45°) = 1."
+  },
+  {
+    "id": "statistics_01",
+    "title": "Mean (Average) Formula",
+    "text": "The mean of a set of numbers is calculated as the sum of all values divided by the count of values. Mean = (x₁ + x₂ + ... + xₙ) / n. For example, mean of [2, 4, 6, 8] is (2 + 4 + 6 + 8) / 4 = 20 / 4 = 5."
+  },
+  {
+    "id": "statistics_02",
+    "title": "Standard Deviation Formula",
+    "text": "Standard deviation measures data spread. For a population: σ = √(Σ(x - μ)² / N), where μ is the mean. For a sample: s = √(Σ(x - x̄)² / (n-1)), where x̄ is the sample mean."
+  }
+]

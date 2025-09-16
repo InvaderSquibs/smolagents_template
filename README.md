@@ -1,14 +1,23 @@
 # SmolAgents Calculator Template
 
-A simple template demonstrating how to use smolagents with a calculator tool and Gemini API.
+A simple template demonstrating how to use smolagents with a calculator tool and Gemini API, with optional RAG (Retrieval-Augmented Generation) capabilities.
 
 ## 🎯 What This Template Does
 
-This template provides a basic calculator agent that can:
+This template provides a calculator agent that can:
 - Perform mathematical calculations using Python expressions
 - Use Gemini API for natural language processing
+- **NEW**: Optional RAG functionality for educational mathematical assistance
 - Monitor LLM calls with Phoenix telemetry (optional)
 - Be easily extended with additional tools
+
+## 🧠 RAG Features (Optional)
+
+When RAG is enabled, the agent can:
+- Retrieve relevant mathematical formulas and concepts from a knowledge base
+- Provide educational context along with calculations
+- Answer questions like "What's the area of a circle with radius 5?" with both the formula and the result
+- Support 20+ mathematical domains: geometry, physics, conversions, finance, algebra, trigonometry, and statistics
 
 ## 🚀 Quick Start
 
@@ -41,7 +50,54 @@ Run the calculator agent demo:
 
 ```bash
 # Run the calculator agent
-python3 src/code_agent_gemini_demo.py
+python3 src/calculator_demo.py
+
+# Run with a custom query
+python3 src/calculator_demo.py "What is 15 * 23 + 42?"
+
+# Run with mathematical questions (RAG enabled automatically if configured)
+python3 src/calculator_demo.py "What's the volume of a cylinder 3 inches tall and 2 inches wide?"
+```
+
+## 🧠 Setting Up RAG (Optional)
+
+To enable RAG functionality for educational mathematical assistance:
+
+### 1. Install RAG Dependencies
+```bash
+pip install sentence-transformers chromadb python-dotenv
+```
+
+### 2. Build the Knowledge Base
+```bash
+# Create the vector store from mathematical formulas
+python3 scripts/build_vector_store.py
+```
+
+This will:
+- Load 20 mathematical formulas from `data/knowledge.json`
+- Create embeddings using `sentence-transformers/all-MiniLM-L6-v2`
+- Store them in a ChromaDB vector database at `./chroma_db`
+
+### 3. Enable RAG in Environment
+```bash
+# Edit your .env file
+RAG_ENABLED=true
+```
+
+### 4. Run with RAG
+```bash
+# The calculator demo automatically uses RAG when enabled
+python3 src/calculator_demo.py "What's the area of a circle with radius 7?"
+python3 src/calculator_demo.py "Convert 25 Celsius to Fahrenheit"
+```
+
+### RAG Configuration Options
+```bash
+# In your .env file
+RAG_ENABLED=true                    # Enable/disable RAG
+EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2  # Embedding model
+CHROMA_DIR=./chroma_db             # Vector database location
 ```
 
 ## 🔍 Phoenix Telemetry & Monitoring
@@ -70,7 +126,7 @@ This template includes built-in support for [Phoenix](https://github.com/Arize-a
 
 4. **Run your calculator agent** - it will automatically be tracked:
    ```bash
-   python3 src/code_agent_gemini_demo.py
+   python3 src/calculator_demo.py
    ```
 
 5. **View telemetry data** at http://localhost:6006
